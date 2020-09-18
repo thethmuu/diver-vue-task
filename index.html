@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
+    />
+
+    <title>Vue.js ToDo</title>
+  </head>
+  <body>
+    <div id="app" class="container mt-5">
+      <div class="row">
+        <div class="col-md-5 mx-auto">
+          <div class="card rounded-0 shadow">
+            <p class="card-header bg-dark text-white rounded-0">Add Student</p>
+            <div class="card-body">
+              <input
+                type="text"
+                class="form-control form-control-sm mb-3"
+                v-model="name"
+                placeholder="Name"
+              />
+              <input
+                type="text"
+                class="form-control form-control-sm mb-3"
+                v-model="course"
+                placeholder="Course"
+              />
+              <input
+                type="text"
+                class="form-control form-control-sm mb-3"
+                v-model="term"
+                placeholder="Term"
+              />
+              <div class="text-center">
+                <button
+                  type="submit"
+                  @click="addStudent"
+                  class="btn btn-sm btn-dark"
+                >
+                  Add Student
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row mt-5">
+        <div class="col-md-6 mx-auto">
+          <ul class="list-group">
+            <!-- <todo-item></todo-item> -->
+            <li
+              class="list-group-item"
+              v-for="student in students"
+              :key="student.id"
+            >
+              ID: {{ student.id }}, Name: {{ student.name }}, Course: {{
+              student.course }}, Term: {{ student.term }}
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
